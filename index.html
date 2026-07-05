@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>AI Based Essay Grading System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+
+<h1>AI Based Essay Grading System</h1>
+
+</div>
+
+<form action="/predict" method="POST">
+
+<textarea
+name="essay"
+rows="14"
+placeholder="Paste your essay here...">{{ essay if essay else "" }}</textarea>
+
+<div class="button-container">
+
+<button type="submit">
+
+🚀 Grade Essay
+
+</button>
+
+</div>
+
+</form>
+
+{% if result %}
+
+<div class="results">
+
+<h2>Evaluation Results</h2>
+
+<div class="cards">
+
+<div class="card score-card">
+<h3>Predicted Score</h3>
+<p>{{ result.score }}</p>
+</div>
+
+<div class="card">
+<h3>Word Count</h3>
+<p>{{ result.words }}</p>
+</div>
+
+<div class="card">
+<h3>Sentence Count</h3>
+<p>{{ result.sentences }}</p>
+</div>
+
+<div class="card">
+<h3>Average Word Length</h3>
+<p>{{ result.avg_length }}</p>
+</div>
+
+<div class="card">
+<h3>Vocabulary</h3>
+<p>{{ result.vocabulary }}</p>
+</div>
+
+</div>
+
+<h2>Feedback</h2>
+
+<div class="feedback">
+
+{% for item in result.feedback %}
+
+<div class="feedback-box">
+
+✔ {{ item }}
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
