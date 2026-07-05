@@ -58,7 +58,7 @@ AI-Based-Essay-Grading-System/
 1. Clone the repository.
 
 ```
-git clone <repository-link>
+git clone <https://github.com/SiddheshPardale/AI-Based-Essay-Grading-System>
 ```
 
 2. Install the required libraries.
