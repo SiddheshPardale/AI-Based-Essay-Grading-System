@@ -38,19 +38,8 @@ AI-Based-Essay-Grading-System/
 ├── feature_extraction.py
 ├── requirements.txt
 ├── README.md
-│
-├── templates/
-│   └── index.html
-│
-├── static/
-│   └── style.css
-│
-├── models/
-│   ├── essay_model.pkl
-│   └── tfidf_vectorizer.pkl
-│
-└── dataset/
-    └── ASAP2_train_sourcetexts.csv
+|── index.html
+|── style.css
 ```
 
 ## How to Run
